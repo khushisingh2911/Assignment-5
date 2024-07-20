@@ -1,0 +1,14 @@
+<nav>
+  <div class="container mx-auto flex justify-between items-center">
+    <div>
+      <a href="/" class="text-xl font-bold">Lego Collection</a>
+    </div>
+    <div class="flex space-x-4">
+      <a class="<%= (page === '/') ? 'active' : '' %> hover:text-gray-400" href="/">Home</a>
+      <a class="<%= (page === '/about') ? 'active' : '' %> hover:text-gray-400" href="/about">About</a>
+      <a class="<%= (page === '/lego/sets') ? 'active' : '' %> hover:text-gray-400" href="/lego/sets">View Collection</a>
+      <a class="<%= (page == '/lego/addSet') ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a>
+
+    </div>
+  </div>
+</nav>

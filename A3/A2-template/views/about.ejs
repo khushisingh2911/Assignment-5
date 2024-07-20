@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Collection - About</title>
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    .dropdown:hover .dropdown-content {display: block;}
+  </style>
+  <div class="container mx-auto py-8">
+    <div class="hero bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">About Me</h1>
+          <p class="py-6"> Hi , I am Khushi Singh from India.
+            I like to create stuff using computer, hoping I will get better at it.
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+      <div class="flex justify-center md:justify-end">
+        <img src="/css/intro.jpeg" alt="About Me" class="rounded-lg shadow-lg" style="max-width: 100%; height: auto; display: block; margin: auto;">
+      </div>
+      
+      
+      <div class="flex items-center">
+        <p class="text-lg">
+         
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

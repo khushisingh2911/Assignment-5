@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Collection</title>
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+ </head>
+ <body>
+  <%- include('partials/navbar') %>
+ <style>
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+
+
+ 
+
+  <div class="container mx-auto py-8">
+    <div class="hero bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Explore the Lego Collection</h1><br>
+          <a href="/lego/sets" class="btn btn-primary">Explore All Sets</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-8 flex justify-center">
+      <button onclick="changeTheme('valentine')" class="btn btn-outline">Valentine Theme</button>
+      <button onclick="changeTheme('retro')" class="btn btn-outline ml-4">Retro Theme</button>
+      <button onclick="changeTheme('luxury')" class="btn btn-outline ml-4">Luxury Theme</button>
+    </div>
+  </div>
+
+  
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+      <div class="card bordered shadow-lg">
+        <img src="/css/lego-1.jpeg" alt="Lego Set 1" class="w-full h-64 object-cover">
+        <div class="card-body">
+          <h2 class="card-title">Gears</h2>
+          <p class="text-sm text-gray-600"> <br></p>
+          <a href="/lego/sets/001-1" class="btn btn-primary mt-4">View Set</a>
+        </div>
+      </div>
+      <div class="card bordered shadow-lg">
+        <img src="/css/lego-2.jpeg" alt="Building Set" class="w-full h-64 object-cover">
+        <div class="card-body">
+          <h2 class="card-title">Building Set</h2>
+          <p class="text-sm text-gray-600"> <br></p>
+          <a href="/lego/sets/002-1" class="btn btn-primary mt-4">View Set</a>
+        </div>
+      </div>
+      <div class="card bordered shadow-lg">
+        <img src="/css/lego-3.jpg" alt="Lego Set 3" class="w-full h-64 object-cover">
+        <div class="card-body">
+          <h2 class="card-title">Technic</h2>
+          <p class="text-sm text-gray-600"> <br></p>
+          <a href="/lego/sets/003-1" class="btn btn-primary mt-4">View Set</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function changeTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= set.name %> Details</title>
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <%- include('partials/navbar', { page: "" }) %>
+  <div class="container mx-auto py-8">
+    <div class="hero bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold"><%= set.name %></h1>
+          <p class="py-6">Theme: <%= set.Theme.name %></p>
+          <p class="py-6">Year: <%= set.year %></p>
+          <p class="py-6">Number of Parts: <%= set.num_parts %></p>
+          <img src="<%= set.img_url %>" alt="<%= set.name %>" class="w-full h-64 object-cover mt-4">
+          <p class="py-6">Description: <%= set.description %></p>
+          <p class="py-6"><%= quote.content %> - <%= quote.author %></p>
+
+          <!-- Buttons for navigation -->
+          <a href="/lego/sets" class="btn btn-primary mt-4">Back to Collection</a>
+          <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success mt-4">Edit Set</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

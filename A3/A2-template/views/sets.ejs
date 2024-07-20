@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection</title>
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <%- include('partials/navbar', { page: '/lego/sets' }) %>
+  <div class="container mx-auto py-8">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold mt-4">Collection</h1>
+      <table class="table-auto mx-auto mt-8">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Theme</th>
+            <th>Year</th>
+            <th>Num Parts</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% sets.forEach(set => { %>
+            <tr>
+              <td><img src="<%= set.img_url %>" alt="<%= set.name %>" class="w-24 h-auto"></td>
+              <td><%= set.name %></td>
+              <td><a href="/lego/sets?theme=<%= set.Theme.name %>" class="btn btn-primary"><%= set.Theme.name %></a></td>
+              <td><%= set.year %></td>
+              <td><%= set.num_parts %></td>
+              <td><a href="/lego/sets/<%= set.set_num %>" class="btn btn-primary">Details</a></td>
+              <td><a href="/lego/editSet/<%= set.set_num %>" class="btn btn-secondary">Edit Set</a></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
