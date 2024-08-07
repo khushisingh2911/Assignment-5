@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +9,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <%- include('partials/navbar') %>
+  <%- include('partials/navbar', { page: '/login', session: session }) %>
   <div class="container mx-auto py-8">
     <div class="max-w-md mx-auto bg-base-200 p-6 rounded-lg shadow-lg">
       <h1 class="text-3xl font-bold text-center mb-4">Login</h1>
       <% if (errorMessage) { %>
         <div class="alert alert-error">
-          <strong>Error:</strong> <%= errorMessage %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span><%= errorMessage %></span>
         </div>
       <% } %>
-      <form action="/login.ejs" method="POST">
+      
+      <form action="/login" method="POST">
         <div class="mb-4">
           <label for="userName" class="block text-lg font-medium">Username</label>
           <input type="text" id="userName" name="userName" class="input input-bordered w-full" value="<%= userName %>" required>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User History</title>
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold text-center mb-4">User History</h1>
+    <div class="bg-base-200 p-6 rounded-lg shadow-lg">
+      <% if (session.user.loginHistory.length === 0) { %>
+        <p class="text-center">No login history available.</p>
+      <% } else { %>
+        <table class="table-auto w-full">
+          <thead>
+            <tr>
+              <th class="border px-4 py-2">Date/Time</th>
+              <th class="border px-4 py-2">User Agent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% session.user.loginHistory.forEach(record => { %>
+              <tr>
+                <td class="border px-4 py-2"><%= new Date(record.dateTime).toLocaleString() %></td>
+                <td class="border px-4 py-2"><%= record.userAgent %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,14 +1,12 @@
-<nav>
-  <div class="container mx-auto flex justify-between items-center">
-    <div>
-      <a href="/" class="text-xl font-bold">Lego Collection</a>
-    </div>
-    <div class="flex space-x-4">
-      <a class="<%= (page === '/') ? 'active' : '' %> hover:text-gray-400" href="/">Home</a>
-      <a class="<%= (page === '/about') ? 'active' : '' %> hover:text-gray-400" href="/about">About</a>
-      <a class="<%= (page === '/lego/sets') ? 'active' : '' %> hover:text-gray-400" href="/lego/sets">View Collection</a>
-      <a class="<%= (page == '/lego/addSet') ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a>
-
-    </div>
-  </div>
-</nav>
+<div class="flex space-x-4">
+  <a class="<%= (typeof page === 'undefined' || page === '/') ? 'active' : '' %> hover:text-gray-400" href="/">Home</a>
+  <a class="<%= (page === '/about') ? 'active' : '' %> hover:text-gray-400" href="/about">About</a>
+  <a class="<%= (page === '/lego/sets') ? 'active' : '' %> hover:text-gray-400" href="/lego/sets">View Collection</a>
+  <% if (session.user) { %>
+    <a class="<%= (page === '/userHistory') ? 'active' : '' %> hover:text-gray-400" href="/userHistory">User History</a>
+    <a class="hover:text-gray-400" href="/logout">Logout</a>
+  <% } else { %>
+    <a class="<%= (page === '/login') ? 'active' : '' %> hover:text-gray-400" href="/login">Login</a>
+    <a class="<%= (page === '/register') ? 'active' : '' %> hover:text-gray-400" href="/register">Register</a>
+  <% } %>
+</div>

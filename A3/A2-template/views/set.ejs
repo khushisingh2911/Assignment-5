@@ -24,7 +24,10 @@
 
           <!-- Buttons for navigation -->
           <a href="/lego/sets" class="btn btn-primary mt-4">Back to Collection</a>
-          <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success mt-4">Edit Set</a>
+
+          <% if (session.user) { %>
+            <a href="/lego/edit/<%= set.id %>" class="btn btn-success mt-4">Edit Set</a>
+          <% } %>
         </div>
       </div>
     </div>

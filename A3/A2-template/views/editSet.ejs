@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="forest">
+<html lang="en" data-theme="night">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,9 +50,11 @@
             <button type="submit" class="btn btn-success mt-4">Update Set</button>
           </form>
           <!-- Delete Set Button -->
-          <form action="/lego/deleteSet/<%= set.set_num %>" method="POST" class="mt-4">
+          <form action="/lego/deleteSet" method="POST" class="mt-4">
+            <input type="hidden" name="set_num" value="<%= set.set_num %>">
             <button type="submit" class="btn btn-error">Delete Set</button>
           </form>
+          
         </div>
       </div>
     </div>
